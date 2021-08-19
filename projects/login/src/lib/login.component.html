@@ -1,0 +1,11 @@
+<form autocomplete="off" [formGroup]="form" (ngSubmit)="login()">
+    <div>
+        <input type="text" formControlName="email" placeholder="email" />
+    </div>
+    <div>
+        <input type="password" formControlName="password" placeholder="password" />
+    </div>
+    <div>
+        <button type="submit">Ingresar</button>
+    </div>
+</form>
