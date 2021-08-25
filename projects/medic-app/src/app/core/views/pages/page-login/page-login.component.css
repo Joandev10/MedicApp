@@ -1,0 +1,28 @@
+.container {
+    height: 100vh;
+}
+.info {
+    background-color: #3f51b5;
+    padding: 20px;
+    height: 100%;
+}
+.info h2 {
+    color: white;
+    font-size: 45px;
+    line-height: 50px;
+}
+
+.info mat-icon {
+    transform: scale(4);
+    color: white;
+}
+.login {
+    height: 100%;
+}
+
+@media screen and (max-width: 959px) {
+    .info h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+}

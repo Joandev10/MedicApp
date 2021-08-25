@@ -1,1 +1,16 @@
-<medl-login (onLogin)="login($event)"></medl-login>
+<div fxLayout fxLayout.lt-md="column" class="container">
+    <div
+        class="info"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        fxLayoutGap="70px"
+        fxFlex="1 1 75%"
+        fxFlex.lt-md="1 1 50%"
+    >
+        <mat-icon>health_and_safety</mat-icon>
+        <h2>Sistema de registro de atención médica</h2>
+    </div>
+    <div class="login" fxLayout fxLayoutAlign="center center" fxFlex="1 1 25%" fxFlex.lt-md="1 1 50%">
+        <medl-login (onLogin)="login($event)"></medl-login>
+    </div>
+</div>

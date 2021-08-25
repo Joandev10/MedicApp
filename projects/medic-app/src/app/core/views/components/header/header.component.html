@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" fxLayout fxLayoutAlign="end center">
+    <button mat-icon-button (click)="expandMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu" class="profile">
+        <img src="/assets/images/avatar.png" alt="" />
+        <span>Username</span>
+        <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Cerrar Sesión</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>perm_identity</mat-icon>
+            <span>Perfil</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>

@@ -4,7 +4,10 @@
     "peerDependencies": {
         "@angular/common": "^12.2.0",
         "@angular/core": "^12.2.0",
-        "@angular/flex-layout": "^12.0.0-beta.34"
+        "@angular/flex-layout": "^12.0.0-beta.34",
+        "@angular/cdk": "^12.2.2",
+        "@angular/animations": "~12.2.0",
+        "@angular/material": "^12.2.2"
     },
     "dependencies": {
         "tslib": "^2.3.0"

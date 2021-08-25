@@ -1,0 +1,7 @@
+mat-nav-list {
+    height: calc(100vh - 64px);
+    padding: 0;
+}
+mat-nav-list span {
+    margin-left: 10px;
+}

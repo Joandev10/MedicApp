@@ -1,11 +1,26 @@
-<form autocomplete="off" [formGroup]="form" (ngSubmit)="login()">
-    <div>
-        <input type="text" formControlName="email" placeholder="email" />
-    </div>
-    <div>
-        <input type="password" formControlName="password" placeholder="password" />
-    </div>
-    <div>
-        <button type="submit">Ingresar</button>
-    </div>
+<form fxLayout="column" fxLayoutAlign="center center" autocomplete="off" [formGroup]="form" (ngSubmit)="login()">
+    <h2>Credenciales</h2>
+    <mat-form-field appearance="outline">
+        <mat-label>Correo Electronico</mat-label>
+        <input matInput type="text" formControlName="email" placeholder="email" />
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="emailField.invalid && (emailField.touched || emailField.dirty)">
+            <small *ngIf="emailField.hasError('required')">El correo electronico es requerido</small>
+            <small *ngIf="emailField.hasError('pattern')">El correo electronico tiene un formato invalido</small>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="password" />
+        <button type="button" mat-icon-button matSuffix (click)="togglePassword()">
+            <mat-icon>{{ hide ? 'lock' : 'lock_open' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="passwordField.invalid && (passwordField.touched || passwordField.dirty)">
+            <small *ngIf="passwordField.hasError('required')">La contraseña es requerida</small>
+            <small *ngIf="passwordField.hasError('pattern')"
+                >La contraseña debe contener mayusculas, minisculas, numeros y caracteres especiales</small
+            >
+        </mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Ingresar</button>
 </form>
