@@ -12,6 +12,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { IconService } from './shared/services/icon.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { Paginator } from './shared/clases/paginator.class';
 
 @NgModule({
     declarations: [AppComponent],
@@ -26,7 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
         HttpClientModule,
         MatIconModule
     ],
-    providers: [],
+    providers: [{ provide: MatPaginatorIntl, useClass: Paginator }],
     bootstrap: [AppComponent]
 })
 export class AppModule {

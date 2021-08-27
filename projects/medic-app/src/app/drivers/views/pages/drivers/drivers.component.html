@@ -1,1 +1,21 @@
 <med-title></med-title>
+<med-container>
+    <perfect-scrollbar class="heightMaxPerfectScrollbar">
+        <med-table [data]="data" [metaDataColumns]="metaDataColumns">
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef>Accion</th>
+                <td mat-cell *matCellDef="let row" class="align-right">
+                    <button mat-icon-button matTooltip="EDITAR">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button matTooltip="ELIMINAR">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+        </med-table>
+    </perfect-scrollbar>
+    <med-paginator [pageSize]="pageSize" [length]="dataOriginal.length" (page)="changePage($event)"></med-paginator>
+</med-container>
+
+<med-keypad [keypadbuttons]="keypadbuttons" (clickButton)="action($event)"></med-keypad>
