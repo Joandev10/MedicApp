@@ -1,6 +1,6 @@
 <!-- <med-page-login (onLogin)="login($event)"></med-page-login> -->
 <mat-sidenav-container autosize="true">
-    <mat-sidenav mode="side" opened>
+    <mat-sidenav mode="side" opened *ngIf="!config.layout.menu.hidden">
         <mat-toolbar fxLayout fxLayoutAlign="center center">
             <mat-icon *ngIf="!expanded" svgIcon="logo"></mat-icon>
             <span *ngIf="expanded">JAPC - SYS MEDIC</span>
@@ -8,7 +8,7 @@
         <med-menu [expanded]="expanded"></med-menu>
     </mat-sidenav>
     <mat-sidenav-content>
-        <med-header (onExpand)="toogleMenu($event)"></med-header>
+        <med-header (onExpand)="toogleMenu($event)" *ngIf="!config.layout.header.hidden"></med-header>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

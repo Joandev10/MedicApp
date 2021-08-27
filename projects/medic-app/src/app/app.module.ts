@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { Paginator } from './shared/clases/paginator.class';
+import { ConfigModule } from './config/modules/config.module';
+import { MED_config } from './config/constants/config.constant';
 
 @NgModule({
     declarations: [AppComponent],
@@ -26,7 +28,8 @@ import { Paginator } from './shared/clases/paginator.class';
         MatToolbarModule,
         FlexLayoutModule,
         HttpClientModule,
-        MatIconModule
+        MatIconModule,
+        ConfigModule.forRoot(MED_config)
     ],
     providers: [{ provide: MatPaginatorIntl, useClass: Paginator }],
     bootstrap: [AppComponent]

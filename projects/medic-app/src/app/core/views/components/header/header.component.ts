@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'med-header',
@@ -9,12 +10,15 @@ export class HeaderComponent implements OnInit {
     @Output('onExpand') onExpand: EventEmitter<boolean> = new EventEmitter<boolean>();
     expanded: boolean = true;
 
-    constructor() {}
+    constructor(private router: Router) {}
 
     ngOnInit(): void {}
 
     expandMenu() {
         this.expanded = !this.expanded;
         this.onExpand.emit(this.expanded);
+    }
+    logout() {
+        this.router.navigateByUrl('/');
     }
 }
