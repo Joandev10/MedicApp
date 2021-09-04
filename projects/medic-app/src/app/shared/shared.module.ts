@@ -1,30 +1,45 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+//Components
 import { TitleComponent } from './components/title/title.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
+import { ContainerComponent } from './components/container/container.component';
+import { TableComponent } from './components/table/table.component';
+import { PaginatorComponent } from './components/paginator/paginator.component';
+import { KeypadComponent } from './components/keypad/keypad.component';
+import { DownloadComponent } from './components/download/download.component';
+//Modules
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { ContainerComponent } from './components/container/container.component';
 import { MatCardModule } from '@angular/material/card';
-import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
-import { PaginatorComponent } from './components/paginator/paginator.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatListModule } from '@angular/material/list';
 import {
     PerfectScrollbarConfigInterface,
     PerfectScrollbarModule,
     PERFECT_SCROLLBAR_CONFIG
 } from 'ngx-perfect-scrollbar';
-import { KeypadComponent } from './components/keypad/keypad.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatTooltipModule } from '@angular/material/tooltip';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true
 };
 
 @NgModule({
-    declarations: [TitleComponent, ContainerComponent, TableComponent, PaginatorComponent, KeypadComponent],
+    declarations: [
+        TitleComponent,
+        ContainerComponent,
+        TableComponent,
+        PaginatorComponent,
+        KeypadComponent,
+        ConfirmComponent,
+        DownloadComponent
+    ],
     imports: [
         CommonModule,
         MatToolbarModule,
@@ -34,7 +49,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         MatTableModule,
         MatPaginatorModule,
         MatButtonModule,
-        MatTooltipModule
+        MatTooltipModule,
+        MatDialogModule,
+        MatBottomSheetModule,
+        MatListModule
     ],
     exports: [
         TitleComponent,
@@ -42,7 +60,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         TableComponent,
         PaginatorComponent,
         PerfectScrollbarModule,
-        KeypadComponent
+        KeypadComponent,
+        MatDialogModule,
+        ConfirmComponent,
+        DownloadComponent
     ],
     providers: [
         {

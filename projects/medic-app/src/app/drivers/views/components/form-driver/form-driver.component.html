@@ -1,0 +1,21 @@
+<mat-toolbar>
+    <span>{{ title }}</span>
+    <span class="spacer"></span>
+    <button mat-icon-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-dialog-content>
+    <form fxLayout="column" autocomplete="off" [formGroup]="formDriver" (ngSubmit)="save()">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" formControlName="name" placeholder="Nombre" required />
+        </mat-form-field>
+        <div fxLayout fxLayoutAlign="end" fxLayoutGap="10px">
+            <button mat-raised-button color="primary" type="submit" [disabled]="formDriver.invalid" mat-dialog-close>
+                Guardar
+            </button>
+            <button mat-button type="button" mat-dialog-close>Cancelar</button>
+        </div>
+    </form>
+</mat-dialog-content>

@@ -13,7 +13,9 @@ export class IconService {
         { name: 'history', path: '../assets/icons/historia.svg' },
         { name: 'medic', path: '../assets/icons/medico.svg' },
         { name: 'driver', path: '../assets/icons/conductor.svg' },
-        { name: 'user', path: '../assets/icons/programador.svg' }
+        { name: 'user', path: '../assets/icons/programador.svg' },
+        { name: 'pdf', path: '../assets/icons/pdf.svg' },
+        { name: 'excel', path: '../assets/icons/excel.svg' }
     ];
     constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
         this.registryIcons();

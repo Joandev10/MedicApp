@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { AuthUseCase } from '../../../application/auth.usecase';
 
 @Component({
     selector: 'med-header',
@@ -9,8 +9,11 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
     @Output('onExpand') onExpand: EventEmitter<boolean> = new EventEmitter<boolean>();
     expanded: boolean = true;
+    username: string | null;
 
-    constructor(private router: Router) {}
+    constructor(private authUseCase: AuthUseCase) {
+        this.username = this.authUseCase.getFieldInToken('name');
+    }
 
     ngOnInit(): void {}
 
@@ -19,6 +22,6 @@ export class HeaderComponent implements OnInit {
         this.onExpand.emit(this.expanded);
     }
     logout() {
-        this.router.navigateByUrl('/');
+        this.authUseCase.logout();
     }
 }

@@ -2,7 +2,7 @@
     <h2>Credenciales</h2>
     <mat-form-field appearance="outline">
         <mat-label>Correo Electronico</mat-label>
-        <input matInput type="text" formControlName="email" placeholder="email" />
+        <input matInput type="text" formControlName="correo" placeholder="email" />
         <mat-icon matSuffix>email</mat-icon>
         <mat-error *ngIf="emailField.invalid && (emailField.touched || emailField.dirty)">
             <small *ngIf="emailField.hasError('required')">El correo electronico es requerido</small>
@@ -22,5 +22,8 @@
             >
         </mat-error>
     </mat-form-field>
+    <div class="recaptcha">
+        <re-captcha formControlName="recaptchaReactive"></re-captcha>
+    </div>
     <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Ingresar</button>
 </form>

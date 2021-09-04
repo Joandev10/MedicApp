@@ -1,0 +1,18 @@
+<mat-nav-list>
+    <a mat-list-item (click)="export($event, 'pdf', 'open')">
+        <mat-icon svgIcon="pdf"></mat-icon>
+        <span mat-line>Exportar a PDF (open)</span>
+    </a>
+    <a mat-list-item (click)="export($event, 'pdf', 'download')">
+        <mat-icon svgIcon="pdf"></mat-icon>
+        <span mat-line>Exportar a PDF (download)</span>
+    </a>
+    <a mat-list-item (click)="export($event, 'pdf', 'print')">
+        <mat-icon svgIcon="pdf"></mat-icon>
+        <span mat-line>Exportar a PDF (print)</span>
+    </a>
+    <a mat-list-item (click)="export($event, 'excel')">
+        <mat-icon svgIcon="excel"></mat-icon>
+        <span mat-line>Exportar a Excel</span>
+    </a>
+</mat-nav-list>

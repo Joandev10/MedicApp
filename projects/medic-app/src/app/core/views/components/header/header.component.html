@@ -5,13 +5,13 @@
     <span class="spacer"></span>
     <button mat-button [matMenuTriggerFor]="menu" class="profile">
         <img src="/assets/images/avatar.png" alt="" />
-        <span>Username</span>
+        <span>{{ username | upper }}</span>
         <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="logout()">
             <mat-icon>logout</mat-icon>
-            <span>Cerrar Sesión</span>
+            <span>Cerrar Sesion</span>
         </button>
         <button mat-menu-item>
             <mat-icon>perm_identity</mat-icon>

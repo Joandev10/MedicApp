@@ -11,9 +11,14 @@ import { MenuComponent } from './views/components/menu/menu.component';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
+import { AuthOperation } from './infraestructure/auth.operation';
+import { StorageOperation } from './infraestructure/storage.operation';
+import { AuthRepository } from './application/auth.repository';
+import { StorageRepository } from './application/storage.repository';
+import { UpperPipe } from './pipes/upper.pipe';
 
 @NgModule({
-    declarations: [PageLoginComponent, HeaderComponent, MenuComponent],
+    declarations: [PageLoginComponent, HeaderComponent, MenuComponent, UpperPipe],
     imports: [
         CommonModule,
         LoginModule,
@@ -25,6 +30,10 @@ import { RouterModule } from '@angular/router';
         MatToolbarModule,
         RouterModule
     ],
-    exports: [PageLoginComponent, HeaderComponent, MenuComponent]
+    exports: [PageLoginComponent, HeaderComponent, MenuComponent],
+    providers: [
+        { provide: AuthRepository, useClass: AuthOperation },
+        { provide: StorageRepository, useClass: StorageOperation }
+    ]
 })
 export class CoreModule {}

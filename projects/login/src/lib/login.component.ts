@@ -1,8 +1,8 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
-interface User {
-    email: string;
+interface Auth {
+    correo: string;
     password: string;
 }
 
@@ -13,13 +13,13 @@ interface User {
 })
 export class LoginComponent implements OnInit {
     form!: FormGroup;
-    @Output('onLogin') onLogin: EventEmitter<User> = new EventEmitter<User>();
+    @Output('onLogin') onLogin: EventEmitter<Auth> = new EventEmitter<Auth>();
     hide: boolean = true;
     emailPattern: string = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
     passwordPattern: string = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$';
 
     get emailField(): FormControl {
-        return this.form.get('email') as FormControl;
+        return this.form.get('correo') as FormControl;
     }
     get passwordField(): FormControl {
         return this.form.get('password') as FormControl;
@@ -33,8 +33,9 @@ export class LoginComponent implements OnInit {
 
     buildForm() {
         this.form = this.fb.group({
-            email: ['jose.7z@hotmail.com', [Validators.required, Validators.pattern(this.emailPattern)]],
-            password: ['AM9*XVUq', [Validators.required, Validators.pattern(this.passwordPattern)]]
+            correo: ['sergio@correo.com', [Validators.required, Validators.pattern(this.emailPattern)]],
+            password: ['123', [Validators.required]],
+            recaptchaReactive: [null, [Validators.required]]
         });
     }
 
